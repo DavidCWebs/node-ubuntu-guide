@@ -4,9 +4,10 @@ Node, NVM & NPM on Ubuntu 14.04
 A guide - to using Node.js in Ubuntu 14.04
 
 ##To Do
-*Summarise Node.js, NVM, NPM
-*Outline installation procedures for the above in Ubuntu 14.04
-*Outline bugfixes
+
+* Summarise Node.js, NVM, NPM
+* Outline installation procedures for the above in Ubuntu 14.04
+* Outline bugfixes
 
 The objective is to be able to run scripts and tasks must run without root permissions, so that common packages (e.g. Yeaoman) can be properly installed and used.
 
