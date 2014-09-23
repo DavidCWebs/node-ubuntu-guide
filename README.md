@@ -16,24 +16,28 @@ We've been mucking about with this for quite some time - we need a definitive gu
 ##Resources##
 NVM repo on GitHub:
 https://github.com/creationix/nvm
+---
 
 Step by step guide on installing Node.js by means of NVM:
 https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server
+---
 
 Outlines a problem with Ubuntu and NVM, along with a potential solution (adding a line manually to ~/.bashrc). See last post especially:
 https://github.com/creationix/nvm/issues/394
+---
 
 Why this is an issue:
 See the answer titled "You need to consider permissions during node installation" in this Stack Overflow answer:
 http://stackoverflow.com/questions/16151018/npm-throws-error-without-sudo
-
+---
 
 This is very important:
 "To set a default Node version to be used in any new shell, use the alias 'default' e.g.
 
 ```nvm alias default 0.10```
 
-Otherwise node isn't recognised in a new shell. This is taken from the NVM readme: 
+Otherwise node isn't recognised in a new shell. This is taken from the NVM readme:
+---
 
 Node/Ubuntu Issue
 https://github.com/joyent/node/issues/3911
