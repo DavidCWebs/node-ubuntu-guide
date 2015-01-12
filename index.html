@@ -31,100 +31,53 @@
         <h1>
 <a name="node-nvm--npm-on-ubuntu-1404" class="anchor" href="#node-nvm--npm-on-ubuntu-1404"><span class="octicon octicon-link"></span></a>Node, NVM &amp; NPM on Ubuntu 14.04</h1>
 
-p>Guidelines on installing Node.js and
+<p>Guidelines on installing Node.js and
 npm using Node Version Manager(NVM) in Ubuntu 14.04.</p>
-
 <p>This method will avoid EACCES errors when trying to install npm or npm packages. It will allow the use of <code>npm install</code> without sudo privileges on project directories.</p>
-
-<h2>What is Node.js?</h2>
-
+<h2 id="what-is-node-js-">What is Node.js?</h2>
 <p>Node.js provides a way of running Javascript on the server-side.</p>
-
-<h2>What is NPM?</h2>
-
+<h2 id="what-is-npm-">What is NPM?</h2>
 <p>The package manager for Node.</p>
-
 <ul>
 <li>An online repository for the publishing of open-source Node.js
 projects</li>
 <li>A command-line utility for interacting with this repository that aids in package installation, version management,
 and dependency management.</li>
 </ul>
-
 <p>Using npm, node packages can be installed from the repository
 using a single line of command. e.g.</p>
-
 <p><code>npm install async</code></p>
-
 <p>Another use for npm is dependency management. When you have a node project with a package.json file, you can run <code>npm install</code> from the
 project root and npm will install all the dependencies listed in the package.json.</p>
-
-<h2>Version Management: Installing NVM:</h2>
-
+<h2 id="version-management-installing-nvm-">Version Management: Installing NVM:</h2>
 <p>Before following the steps below to install node/npm, you should first make sure that there are no versions of node/npm already installed on your system. This can be done with the following lines of code:</p>
-
-<p>~~~
-which node
-which npm
-~~~</p>
-
-<p>If there is no output after either of the above, then that respective package is not present on your system.</p>
-
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>which&nbsp;node</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>which&nbsp;npm</span></span></span></div></pre><p>If there is no output after either of the above, then that respective package is not present on your system.</p>
 <p>Once this is complete, enter:</p>
-
-<p>~~~
-sudo apt-get update
-sudo apt-get install build-essential libssl-dev
-~~~</p>
-
-<p>Once these prerequisite packages are installed you can install NVM with
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>sudo&nbsp;apt-get&nbsp;update</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>sudo&nbsp;apt-get&nbsp;install&nbsp;build-essential&nbsp;libssl-dev</span></span></span></div></pre><p>Once these prerequisite packages are installed you can install NVM with
 with the command:</p>
-
 <p><code>curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | sh</code></p>
-
 <p>You may now have to restart your terminal. Once you've done this, run the following command:</p>
-
 <p><code>source ~/.profile</code></p>
-
 <p>This allows the current BASH profile to be reloaded, without logging out and back in again.</p>
-
-<h2>Installing Node:</h2>
-
+<h2 id="installing-node-">Installing Node:</h2>
 <p>You can then view which versions of Node.js are available for installation with the command:</p>
-
-<p>~~~bash
-nvm ls-remote</p>
-
-<h1>You can install the relevant version by entering:</h1>
-
-<p>nvm install 0.11.14</p>
-
-<p>~~~</p>
-
+<pre class="editor-colors lang-bash"><div class="line"><span class="source shell"><span>nvm&nbsp;ls-remote</span></span></div><div class="line"><span class="source shell"><span>&nbsp;</span></span></div><div class="line"><span class="source shell"><span class="comment line number-sign shell"><span class="punctuation definition comment shell"><span>#</span></span><span>You&nbsp;can&nbsp;install&nbsp;the&nbsp;relevant&nbsp;version&nbsp;by&nbsp;entering:</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source shell"><span>&nbsp;</span></span></div><div class="line"><span class="source shell"><span>nvm&nbsp;install&nbsp;0.11.14</span></span></div></pre>
 <p>NPM should be installed by default along with Node.js. You should now
 be able to install packages without being forced to use the sudo command.</p>
-
 <p>You can set a default version of Node to be used by the setting the alias
 "default". This is important, otherwise node isn't recognised in a new shell:</p>
-
 <p><code>nvm alias default 0.11.14</code></p>
-
 <p>This allows you to revert to a different version of Node if the current
 version is incompatible with an particular application. Each version of
 Node will keep track of its own packages. You can also install a package
 globally, which will make it available to all projects using the same
 version of Node, by adding the -g tag. e.g.</p>
-
 <p><code>npm install -g grunt</code></p>
-
 <p>Installing globally will let you run the commands from the command line,
 but you'll have to link the package into your local sphere to require
 it from within a program. eg.</p>
-
 <p><code>npm link grunt</code></p>
-
-<h2>Resources</h2>
-
+<h2 id="resources">Resources</h2>
 <ul>
 <li><a href="https://www.npmjs.com/">NPM</a></li>
 <li><a href="https://www.npmjs.com/package/npm">NPM Packages</a></li>
