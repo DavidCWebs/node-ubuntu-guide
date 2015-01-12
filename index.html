@@ -31,100 +31,109 @@
         <h1>
 <a name="node-nvm--npm-on-ubuntu-1404" class="anchor" href="#node-nvm--npm-on-ubuntu-1404"><span class="octicon octicon-link"></span></a>Node, NVM &amp; NPM on Ubuntu 14.04</h1>
 
-Guidelines on installing Node.js and
-npm using Node Version Manager(NVM) in Ubuntu 14.04.
+p>Guidelines on installing Node.js and
+npm using Node Version Manager(NVM) in Ubuntu 14.04.</p>
 
-This method will avoid EACCES errors when trying to install npm or npm packages. It will allow the use of ```npm install``` without sudo privileges on project directories.
+<p>This method will avoid EACCES errors when trying to install npm or npm packages. It will allow the use of <code>npm install</code> without sudo privileges on project directories.</p>
 
-##What is Node.js?
-Node.js provides a way of running Javascript on the server-side.
+<h2>What is Node.js?</h2>
 
-##What is NPM?
-The package manager for Node.
+<p>Node.js provides a way of running Javascript on the server-side.</p>
 
-* An online repository for the publishing of open-source Node.js
-projects
-* A command-line utility for interacting with this repository that aids in package installation, version management,
-and dependency management.
+<h2>What is NPM?</h2>
 
-Using npm, node packages can be installed from the repository
-using a single line of command. e.g.
+<p>The package manager for Node.</p>
 
-```npm install async```
+<ul>
+<li>An online repository for the publishing of open-source Node.js
+projects</li>
+<li>A command-line utility for interacting with this repository that aids in package installation, version management,
+and dependency management.</li>
+</ul>
 
-Another use for npm is dependency management. When you have a node project with a package.json file, you can run ```npm install``` from the
-project root and npm will install all the dependencies listed in the package.json.
+<p>Using npm, node packages can be installed from the repository
+using a single line of command. e.g.</p>
 
-##Version Management: Installing NVM:
+<p><code>npm install async</code></p>
 
-Before following the steps below to install node/npm, you should first make sure that there are no versions of node/npm already installed on your system. This can be done with the following lines of code:
+<p>Another use for npm is dependency management. When you have a node project with a package.json file, you can run <code>npm install</code> from the
+project root and npm will install all the dependencies listed in the package.json.</p>
 
-~~~
+<h2>Version Management: Installing NVM:</h2>
+
+<p>Before following the steps below to install node/npm, you should first make sure that there are no versions of node/npm already installed on your system. This can be done with the following lines of code:</p>
+
+<p>~~~
 which node
 which npm
-~~~
+~~~</p>
 
-If there is no output after either of the above, then that respective package is not present on your system.
+<p>If there is no output after either of the above, then that respective package is not present on your system.</p>
 
-Once this is complete, enter:
+<p>Once this is complete, enter:</p>
 
-~~~
+<p>~~~
 sudo apt-get update
 sudo apt-get install build-essential libssl-dev
-~~~
+~~~</p>
 
-Once these prerequisite packages are installed you can install NVM with
-with the command:
+<p>Once these prerequisite packages are installed you can install NVM with
+with the command:</p>
 
-```curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | sh```
+<p><code>curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | sh</code></p>
 
-You may now have to restart your terminal. Once you've done this, run the following command:
+<p>You may now have to restart your terminal. Once you've done this, run the following command:</p>
 
-```source ~/.profile```
+<p><code>source ~/.profile</code></p>
 
-This allows the current BASH profile to be reloaded, without logging out and back in again.
+<p>This allows the current BASH profile to be reloaded, without logging out and back in again.</p>
 
-##Installing Node:
-You can then view which versions of Node.js are available for installation with the command:
+<h2>Installing Node:</h2>
 
-~~~bash
-nvm ls-remote
+<p>You can then view which versions of Node.js are available for installation with the command:</p>
 
-#You can install the relevant version by entering:
+<p>~~~bash
+nvm ls-remote</p>
 
-nvm install 0.11.14
+<h1>You can install the relevant version by entering:</h1>
 
-~~~
+<p>nvm install 0.11.14</p>
 
-NPM should be installed by default along with Node.js. You should now
-be able to install packages without being forced to use the sudo command.
+<p>~~~</p>
 
-You can set a default version of Node to be used by the setting the alias
-"default". This is important, otherwise node isn't recognised in a new shell:
+<p>NPM should be installed by default along with Node.js. You should now
+be able to install packages without being forced to use the sudo command.</p>
 
-```nvm alias default 0.11.14```
+<p>You can set a default version of Node to be used by the setting the alias
+"default". This is important, otherwise node isn't recognised in a new shell:</p>
 
-This allows you to revert to a different version of Node if the current
+<p><code>nvm alias default 0.11.14</code></p>
+
+<p>This allows you to revert to a different version of Node if the current
 version is incompatible with an particular application. Each version of
 Node will keep track of its own packages. You can also install a package
 globally, which will make it available to all projects using the same
-version of Node, by adding the -g tag. e.g.
+version of Node, by adding the -g tag. e.g.</p>
 
-```npm install -g grunt```
+<p><code>npm install -g grunt</code></p>
 
-Installing globally will let you run the commands from the command line,
+<p>Installing globally will let you run the commands from the command line,
 but you'll have to link the package into your local sphere to require
-it from within a program. eg.
+it from within a program. eg.</p>
 
-```npm link grunt```
+<p><code>npm link grunt</code></p>
 
-##Resources
-* [NPM](https://www.npmjs.com/)
-* [NPM Packages](https://www.npmjs.com/package/npm)
-* [NVM](https://github.com/creationix/nvm)
-* [Ubuntu Specific Issues, NVM](https://github.com/creationix/nvm/issues/394)
-* [Step by step guide on installing Node.js by means of NVM](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server)
-* [Why consider permissions during node installation?](http://stackoverflow.com/questions/16151018/npm-throws-error-without-sudo)
-* [Node/Ubuntu issue](https://github.com/joyent/node/issues/3911)
+<h2>Resources</h2>
+
+<ul>
+<li><a href="https://www.npmjs.com/">NPM</a></li>
+<li><a href="https://www.npmjs.com/package/npm">NPM Packages</a></li>
+<li><a href="https://github.com/creationix/nvm">NVM</a></li>
+<li><a href="https://github.com/creationix/nvm/issues/394">Ubuntu Specific Issues, NVM</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server">Step by step guide on installing Node.js by means of NVM</a></li>
+<li><a href="http://stackoverflow.com/questions/16151018/npm-throws-error-without-sudo">Why consider permissions during node installation?</a></li>
+<li><a href="https://github.com/joyent/node/issues/3911">Node/Ubuntu issue</a></li>
+</ul>
+
   </body>
 </html>
